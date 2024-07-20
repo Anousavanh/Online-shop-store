@@ -96,7 +96,6 @@ const Navbar = () => {
           <p className="text-base-bold">Cart ({cart.cartItems.length})</p>
         </Link>
         <LanguageSwitcher />
-        <h1>{('welcome_message')}</h1>
         <Menu
           className="cursor-pointer lg:hidden"
           onClick={() => setDropdownMenu(!dropdownMenu)}
