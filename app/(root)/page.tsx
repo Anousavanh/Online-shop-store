@@ -13,7 +13,7 @@ export default function Home() {
       <ProductList />
       <Footer />
     </>
-  );
+  )
 }
 
 export const dynamic = 'force-dynamic';
