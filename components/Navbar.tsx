@@ -9,6 +9,8 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
+import LanguageSwitcher from '../components/LanguageSwitcher';
+
 const Navbar = () => {
   const pathname = usePathname();
   const router = useRouter();
@@ -93,7 +95,8 @@ const Navbar = () => {
           <ShoppingCart />
           <p className="text-base-bold">Cart ({cart.cartItems.length})</p>
         </Link>
-
+        <LanguageSwitcher />
+        <h1>{('welcome_message')}</h1>
         <Menu
           className="cursor-pointer lg:hidden"
           onClick={() => setDropdownMenu(!dropdownMenu)}
