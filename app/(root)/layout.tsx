@@ -22,15 +22,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <I18nextProvider i18n={i18n}>
       <body className={inter.className}>
+      <I18nextProvider i18n={i18n}>
         <ClerkProvider>
           <ToasterProvider />
           <Navbar />
           {children}
         </ClerkProvider>
+        </I18nextProvider>
       </body>
-      </I18nextProvider>
     </html>
   );
 }
