@@ -11,7 +11,6 @@ export default function Home() {
       <Image src="/banner1.png" alt="banner" width={2000} height={1000} className="w-screen" />
       <Collections />
       <ProductList />
-      dsads
       <Footer />
     </>
   );
