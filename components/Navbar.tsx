@@ -4,10 +4,10 @@ import useCart from "@/lib/hooks/useCart";
 
 import { UserButton, useUser } from "@clerk/nextjs";
 import { CircleUserRound, Menu, Search, ShoppingCart } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 import LanguageSwitcher from '../components/LanguageSwitcher';
 
@@ -19,6 +19,7 @@ const Navbar = () => {
 
   const [dropdownMenu, setDropdownMenu] = useState(false);
   const [query, setQuery] = useState("");
+  const { t } = useTranslation();
 
   useEffect(() => {
     const link = document.createElement("link");
@@ -96,6 +97,7 @@ const Navbar = () => {
           <p className="text-base-bold">Cart ({cart.cartItems.length})</p>
         </Link>
         <LanguageSwitcher />
+        <h1>{t('welcome_message')}</h1>
         <Menu
           className="cursor-pointer lg:hidden"
           onClick={() => setDropdownMenu(!dropdownMenu)}
