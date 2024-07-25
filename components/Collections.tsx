@@ -1,16 +1,12 @@
 import { getCollections } from "@/lib/actions/actions";
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslation } from 'react-i18next';
-import LanguageSwitcher from '../components/LanguageSwitcher';
 
 const Collections = async () => {
   const collections = await getCollections();
-  const { t } = useTranslation('common');
   return (
     <div className="flex flex-col items-center gap-10 py-8 px-5">
-      <LanguageSwitcher />
-      <p className="text-heading1-bold">{t('welcome_message')}</p>
+      <p className="text-heading1-bold">Collections</p>
       {!collections || collections.length === 0 ? (
         <p className="text-body-bold">No collections found</p>
       ) : (
