@@ -3,11 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTranslation } from 'react-i18next';
 
-const Collections = async (t:any) => {
+const Collections = async () => {
   const collections = await getCollections();
+  // const { t } = useTranslation();
   return (
     <div className="flex flex-col items-center gap-10 py-8 px-5">
-      <p className="text-heading1-bold">{t("Collection")}</p>
+      {/* <p className="text-heading1-bold">{t('Collection')}</p> */}
       {!collections || collections.length === 0 ? (
         <p className="text-body-bold">No collections found</p>
       ) : (
