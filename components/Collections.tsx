@@ -5,11 +5,11 @@ import { useTranslation } from 'react-i18next';
 
 const Collections = async () => {
   const collections = await getCollections();
-  const { t } = await useTranslation();
+  // const { t } = await useTranslation();
   return (
     <div className="flex flex-col items-center gap-10 py-8 px-5">
       <p className="text-heading1-bold">Test</p>
-      <h1>{t("Collection")}</h1>
+      {/* <h1>{t("Collection")}</h1> */}
       {!collections || collections.length === 0 ? (
         <p className="text-body-bold">No collections found</p>
       ) : (
