@@ -3,7 +3,7 @@ import { LanguageProvider } from '../contexts/LanguageContext';
 import { ClerkProvider } from '@clerk/nextjs';
 import Navbar from '@/components/Navbar';
 import ToasterProvider from '@/lib/providers/ToasterProvider';
-import '../globals.css';
+import '@/app/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
