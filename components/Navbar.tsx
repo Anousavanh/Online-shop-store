@@ -9,6 +9,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import LanguageSwitcher from '../components/LanguageSwitcher';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -27,6 +28,8 @@ const Navbar = () => {
     document.head.appendChild(link);
   }, []);
 
+  const { language } = useLanguage();
+
   return (
     <div className="sticky top-0 z-10 py-2 px-10 flex gap-2 justify-between items-center bg-white max-sm:px-2">
       <Link href="/">
@@ -41,7 +44,7 @@ const Navbar = () => {
           href="/"
           className={`hover:text-red-1 ${pathname === "/" && "text-red-1"}`}
         >
-          Home
+          <li>{language === 'en' ? 'Home' : 'หน้าแรก'}</li>
         </Link>
         {/* <Link
           href={user ? "/wishlist" : "/sign-in"}

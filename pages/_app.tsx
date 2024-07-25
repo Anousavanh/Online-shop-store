@@ -1,8 +1,20 @@
-import { appWithTranslation } from 'next-i18next';
 import type { AppProps } from 'next/app';
+import { LanguageProvider } from '../contexts/LanguageContext';
+import { ClerkProvider } from '@clerk/nextjs';
+import Navbar from '@/components/Navbar';
+import ToasterProvider from '@/lib/providers/ToasterProvider';
+import '../globals.css';
 
-const MyApp = ({ Component, pageProps }: AppProps) => (
-  <Component {...pageProps} />
-);
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <LanguageProvider>
+      <ClerkProvider>
+        <ToasterProvider />
+        <Navbar />
+        <Component {...pageProps} />
+      </ClerkProvider>
+    </LanguageProvider>
+  );
+}
 
-export default appWithTranslation(MyApp);
+export default MyApp;

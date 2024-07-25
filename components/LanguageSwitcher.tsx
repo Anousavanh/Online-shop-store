@@ -1,22 +1,29 @@
-'use client';
-import React from 'react';
-import { useRouter } from 'next/router';
+import React from "react";
+import { useLanguage } from "./LanguageContext";
 
 const LanguageSwitcher = () => {
-  const router = useRouter();
+  const { language, setLanguage } = useLanguage();
 
-  const changeLanguage = (lang: string) => {
-    router.push(router.pathname, router.asPath, { locale: lang });
+  const handleLanguageChange = (lang: string) => {
+    setLanguage(lang);
   };
 
   return (
     <div>
-      <button onClick={() => changeLanguage('en')}>English</button>
-      <button onClick={() => changeLanguage('lo')}>ລາວ</button>
+      <button
+        onClick={() => handleLanguageChange("en")}
+        disabled={language === "en"}
+      >
+        English
+      </button>
+      <button
+        onClick={() => handleLanguageChange("lo")}
+        disabled={language === "th"}
+      >
+        ລາວ
+      </button>
     </div>
   );
 };
 
 export default LanguageSwitcher;
-
-
